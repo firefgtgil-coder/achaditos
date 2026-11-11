@@ -1,0 +1,110 @@
+/* Efeitos e Animações Especiais do Achaditos */
+@keyframes scrollBgY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollBgYReverse {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.4), 0 0 30px rgba(37, 211, 102, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.8), 0 0 45px rgba(37, 211, 102, 0.4);
+  }
+}
+
+@keyframes pulseYellowGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+.animate-yellow-glow {
+  animation: pulseYellowGlow 3s infinite;
+}
+
+/* Colunas do Marquee de Fundo */
+.marquee-column-1 {
+  animation: scrollBgY 38s linear infinite;
+}
+
+.marquee-column-2 {
+  animation: scrollBgYReverse 42s linear infinite;
+}
+
+.marquee-column-3 {
+  animation: scrollBgY 35s linear infinite;
+}
+
+.marquee-column-4 {
+  animation: scrollBgYReverse 45s linear infinite;
+}
+
+/* Pausar animação se o usuário preferir menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-column-1, .marquee-column-2, .marquee-column-3, .marquee-column-4 {
+    animation: none;
+  }
+}
+
+/* Efeito Glassmorphism escuro */
+.glass-panel {
+  background: rgba(13, 19, 33, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(22, 30, 49, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  background: rgba(27, 38, 62, 0.85);
+  border-color: rgba(37, 211, 102, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(37, 211, 102, 0.15);
+}
+
+/* Barra de rolagem estilizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
